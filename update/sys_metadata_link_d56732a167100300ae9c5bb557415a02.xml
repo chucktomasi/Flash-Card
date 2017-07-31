@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>22244f0467000300ae9c5bb557415a51</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_flash_question">
+    <x_flash_question action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <answer>1</answer>
+        <level display_value="Easy">ba344f0467000300ae9c5bb557415a99</level>
+        <question>What is the atomic weight of hydrogen</question>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-07-14 16:31:43</sys_created_on>
+        <sys_id>22244f0467000300ae9c5bb557415a51</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-07-14 16:31:43</sys_updated_on>
+        <topic display_value="Science">4dc3cb0467000300ae9c5bb557415afb</topic>
+    </x_flash_question>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-07-31 17:41:41</sys_created_on>
+        <sys_id>d56732a167100300ae9c5bb557415a02</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Created 2017-07-14 09:31:43</sys_name>
+        <sys_package display_value="Flash Card" source="x_flash">0f0a2cb3671232001ad95bb557415a5f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flash Card">0f0a2cb3671232001ad95bb557415a5f</sys_scope>
+        <sys_update_name>sys_metadata_link_d56732a167100300ae9c5bb557415a02</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-07-31 17:41:41</sys_updated_on>
+        <tablename>x_flash_question</tablename>
+    </sys_metadata_link>
+</record_update>
