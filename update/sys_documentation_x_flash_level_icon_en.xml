@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="icon" label="Icon" language="en" table="x_flash_level">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>icon</element>
+            <help/>
+            <hint/>
+            <label>Icon</label>
+            <language>en</language>
+            <name>x_flash_level</name>
+            <plural>Icons</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-30 14:52:26</sys_created_on>
+            <sys_id>386e58480fa2f2007500cbdce1050ef6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Icon</sys_name>
+            <sys_package display_value="Flash Card" source="x_flash">0f0a2cb3671232001ad95bb557415a5f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Flash Card">0f0a2cb3671232001ad95bb557415a5f</sys_scope>
+            <sys_update_name>sys_documentation_x_flash_level_icon_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-30 14:52:26</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

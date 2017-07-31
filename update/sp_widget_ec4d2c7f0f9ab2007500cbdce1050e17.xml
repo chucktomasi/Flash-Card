@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($scope, $http) {
+	/* widget controller */
+	var c = this;
+
+	$scope.setLevel = function(value) {
+		c.data.levelSelected = value;
+	}
+
+	$scope.setTopic = function(value) {
+		c.data.topicSelected = value;
+	}
+	
+	$scope.showAnswer = function() {
+		$scope.data.showAnswer = true;
+	}
+
+	$scope.fetch = function() {
+		var topicIndex = c.data.topicSelected;
+		var levelIndex = c.data.levelSelected;
+		var reqBody = {
+			"topicIndex" : topicIndex,
+			"levelIndex" : levelIndex
+		};
+
+		$http({
+			method : "POST",
+			url : "/api/x_flash/fetch",
+			headers : {"Content-type" : "application/json"},
+			data : reqBody
+		}).then(function success(response) {
+			// console.log('fetch(): success + response=' + JSON.stringify(response, null, 4));
+			$scope.data.question = response.data.result.question;
+			$scope.data.answer = response.data.result.answer;
+			$scope.data.topic = response.data.result.topic;
+			$scope.data.level = response.data.result.level;
+			$scope.data.showAnswer = false;
+		}, function failure(response) {
+			console.log('fetch(): failure');
+		});		
+	}
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/*
+.title {
+font-size: 200%;
+background-color: #696969;
+width: 100%;
+color : #fff;
+padding : 5px;
+text-align : center;
+}
+*/
+.title {
+  overflow: hidden;
+  font-weight:bold;
+}
+
+.title:after {
+  content:"";
+  display: inline-block;
+  height: 0.5em;
+  vertical-align: bottom;
+  width: 100%;
+  margin-right: -100%;
+  margin-left: 10px;
+  border-top: 1px solid black;
+}
+.myButton {
+  position : relative;
+  width : 100px;
+  height : 50px;
+  padding : 5px;
+  color : #fff;
+  margin : 2px;
+}
+
+div.center {
+  position: absolute;
+  left: 0;
+  top: 15;
+  width: 100%;
+  text-align: center;
+  font-size: 150%;
+}
+
+div.bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+div.bottom-center {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+div.top-right {
+  position: absolute;
+  top : 0;
+  right : 0px;
+}
+
+.button-blue {
+  background-color : deepskyblue;
+}
+
+.button-green {
+  background-color : #5cb85c;
+}
+
+.results {
+  font-size: 100%;
+  text-align : center;
+  background-color: whitesmoke;
+}
+
+.category {
+  font-size: 150%;
+  color : #fff;
+  background-color : steelblue;
+}
+
+.btn {
+  font-size : 150%;
+}
+
+.question {
+  font-size : 150%;
+}
+
+.answer {
+  font-size : 150%;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>flash_question</id>
+        <internal>false</internal>
+        <link/>
+        <name>flash question</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+	// get categories
+	var tu = new Utils();
+	data.topics = tu.getTopics();
+	data.levels = tu.getLevels();
+	data.levelSelected = 0;
+	data.topicSelected = 0;
+
+	data.question = '';
+	data.answer = '';
+	data.topic = '';
+	data.level = '';
+	data.showAnswer = false;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-04-29 21:18:55</sys_created_on>
+        <sys_id>ec4d2c7f0f9ab2007500cbdce1050e17</sys_id>
+        <sys_mod_count>199</sys_mod_count>
+        <sys_name>flash question</sys_name>
+        <sys_package display_value="Flash Card" source="x_flash">0f0a2cb3671232001ad95bb557415a5f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flash Card">0f0a2cb3671232001ad95bb557415a5f</sys_scope>
+        <sys_update_name>sp_widget_ec4d2c7f0f9ab2007500cbdce1050e17</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-03 13:58:30</sys_updated_on>
+        <template><![CDATA[<div>
+
+<div class="title">Topic</div>
+  
+  <div class="col-xs-4" ng-repeat="topic in data.topics">
+    <div class="myButton button-blue" ng-click="setTopic(topic.index)">
+      <div class="top-right">
+        <i ng-if="topic.index == data.topicSelected" class="fa fa-check" aria-hidden="true"></i>
+      </div>
+      <div class="center">
+        <i class="fa {{::topic.icon}}" aria-hidden="true"></i>
+      </div>
+      <div class="bottom-center">
+        {{topic.name}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<p style="clear:both"></p>
+
+<div class="title">Level</div>
+
+<div class="col-xs-4" ng-repeat="level in data.levels">
+  <div class="myButton button-green" ng-click="setLevel(level.index)">
+    <div class="top-right">
+      <i ng-if="level.index == data.levelSelected" class="fa fa-check" aria-hidden="true"></i>
+    </div>
+    <div class="center">
+      <i class="fa {{level.icon}}" aria-hidden="true"></i>
+    </div>
+    <div class="bottom-center">
+      {{level.name}}
+    </div>  
+  </div>
+</div>
+
+<p style="clear:both"> </p>
+
+<button class="btn btn-info" style="width:100%" ng-click="fetch()">
+  Fetch
+</button>
+
+<div class="results">
+  <div class="category">
+    {{data.level}} {{data.topic}}
+  </div>
+  <div class="question">{{data.question}}</div>
+  <div ng-if="data.question != ''">
+
+    <button class="btn btn-info" style="width:100%" ng-click="showAnswer()">
+      Show answer
+    </button>
+    <div class="answer" ng-if="data.showAnswer">
+      {{data.answer}}  
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

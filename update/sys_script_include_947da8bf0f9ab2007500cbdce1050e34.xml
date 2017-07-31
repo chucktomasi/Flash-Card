@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_flash.Utils</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Utils</name>
+        <script><![CDATA[var Utils = Class.create();
+Utils.prototype = {
+	initialize: function() {
+		this.qTable = 'x_flash_question';
+		this.topicTable = 'x_flash_topic';
+		this.levelTable = 'x_flash_level';
+	},
+
+	getTopics : function() {
+
+		var list = [];
+		var count = 0;
+		var topic = new GlideRecord(this.topicTable);
+
+		topic.addQuery('active', true);
+		topic.orderBy('order');
+		topic.query();
+
+		while (topic.next()) {
+			var obj = {};
+			obj.sys_id = topic.getValue('sys_id');
+			obj.name = topic.getValue('name');
+			obj.order = topic.getValue('order');
+			obj.index = count;
+			obj.icon = topic.getValue('icon');
+			list.push(obj);
+			++count;
+		}
+
+		return list;
+	},
+
+	getLevels : function() {
+
+		var list = [];
+		var count = 0;
+		var level = new GlideRecord(this.levelTable);
+
+		level.addQuery('active', true);
+		level.orderBy('order');
+		level.query();
+
+		while (level.next()) {
+			var obj = {};
+			obj.name = level.getValue('name');
+			obj.sys_id = level.getValue('sys_id');
+			obj.order = level.getValue('order');
+			obj.index = count;
+			obj.icon = level.getValue('icon');
+
+			list.push(obj);
+			++count;
+		}
+
+		return list;
+	},
+
+	getRandomTopic : function() {
+		var list = this.getTopics();
+		var index = this._getRandom(list.length - 1);
+		++index;
+
+		return list[index];
+	},
+
+	getRandomLevel : function() {
+		var list = this.getLevels();
+		var index = this._getRandom(list.length - 1);
+		++index;
+
+		return list[index];
+	},
+
+	getTopicByID : function(id) {
+		var list = this.getTopics();
+
+		return list[id];
+	},
+
+	getLevelByID : function(id) {
+		var list = this.getLevels();
+
+		return list[id];
+	},
+
+	getRandomQuestion : function(topic, level) {
+
+		var list = [];
+		var q = new GlideRecord(this.qTable);
+		q.addQuery('topic', topic.sys_id);
+		q.addQuery('level', level.sys_id);
+		q.query();
+
+		while (q.next()) {
+			var obj = {};
+			obj.topic = q.topic.getDisplayValue();
+			obj.level = q.level.getDisplayValue();
+			obj.question = q.getValue('question');
+			obj.answer = q.getValue('answer');
+			list.push(obj);
+		}
+
+
+		if (list.length == 0) {
+			return {
+				'topic' : topic.name,
+				'level' : level.name,
+				'question' : 'Sorry, no results found',
+				'answer' : 'Please try again'
+			};
+		}
+
+		var random = this._getRandom(list.length);
+
+		return list[random];
+	},
+
+	_getRandom : function(lim) {
+
+		return Math.floor(Math.random() * lim).toFixed(0);
+
+	},
+
+	type: 'Utils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-04-29 21:29:30</sys_created_on>
+        <sys_id>947da8bf0f9ab2007500cbdce1050e34</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Utils</sys_name>
+        <sys_package display_value="Flash Card" source="x_flash">0f0a2cb3671232001ad95bb557415a5f</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Flash Card">0f0a2cb3671232001ad95bb557415a5f</sys_scope>
+        <sys_update_name>sys_script_include_947da8bf0f9ab2007500cbdce1050e34</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-04-30 14:59:15</sys_updated_on>
+    </sys_script_include>
+</record_update>

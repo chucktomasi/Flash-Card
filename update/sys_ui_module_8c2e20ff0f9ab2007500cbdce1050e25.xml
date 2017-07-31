@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Flash Card">394a24f3671232001ad95bb557415af6</application>
+        <filter/>
+        <name>Topics</name>
+        <order>200</order>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_flash.admin</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-04-29 21:22:42</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8c2e20ff0f9ab2007500cbdce1050e25</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Topics</sys_name>
+        <sys_package display_value="Flash Card" source="x_flash">0f0a2cb3671232001ad95bb557415a5f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flash Card">0f0a2cb3671232001ad95bb557415a5f</sys_scope>
+        <sys_update_name>sys_ui_module_8c2e20ff0f9ab2007500cbdce1050e25</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-07-14 16:37:23</sys_updated_on>
+        <table>x_flash_topic</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+</record_update>

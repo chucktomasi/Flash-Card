@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Level" max_length="40" name="x_flash_level" type="collection">
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Icon" max_length="40" name="icon" type="string"/>
+        <element display="true" label="Name" max_length="40" name="name" type="string"/>
+        <element default="100" label="Order" max_length="40" name="order" type="integer"/>
+    </element>
+</database>

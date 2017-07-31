@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="level" table="x_flash_question" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>level</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Random</label>
+            <language>en</language>
+            <name>x_flash_question</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-29 21:12:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7ecb6037671232001ad95bb557415a6d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-29 21:12:31</sys_updated_on>
+            <value>Random</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>level</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Basic</label>
+            <language>en</language>
+            <name>x_flash_question</name>
+            <sequence>1</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-29 21:12:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3acb6037671232001ad95bb557415a6e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-29 21:12:31</sys_updated_on>
+            <value>Basic</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>level</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Intermediate</label>
+            <language>en</language>
+            <name>x_flash_question</name>
+            <sequence>2</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-29 21:12:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>32cb6037671232001ad95bb557415a6f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-29 21:12:31</sys_updated_on>
+            <value>Intermediate</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>level</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Advanced</label>
+            <language>en</language>
+            <name>x_flash_question</name>
+            <sequence>3</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-29 21:12:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3acb6037671232001ad95bb557415a6f</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-29 21:36:53</sys_updated_on>
+            <value>Advanced</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>level</element>
+            <name>x_flash_question</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-04-29 21:12:31</sys_created_on>
+            <sys_id>ee518fc067000300ae9c5bb557415aba</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_name>level</sys_name>
+            <sys_package display_value="Flash Card" source="x_flash">0f0a2cb3671232001ad95bb557415a5f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Flash Card">0f0a2cb3671232001ad95bb557415a5f</sys_scope>
+            <sys_update_name>sys_choice_x_flash_question_level</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-04-29 21:36:53</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Question" max_length="40" name="x_flash_question" type="collection">
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element attributes="no_truncate=true" label="Answer" max_length="1000" name="answer" type="string"/>
+        <element label="Level" max_length="32" name="level" reference="x_flash_level" type="reference"/>
+        <element attributes="no_truncate=true" label="Question" max_length="1000" name="question" type="string"/>
+        <element label="Topic" max_length="32" name="topic" reference="x_flash_topic" type="reference"/>
+        <index name="index">
+            <element name="level"/>
+        </index>
+        <index name="index2">
+            <element name="topic"/>
+        </index>
+    </element>
+</database>

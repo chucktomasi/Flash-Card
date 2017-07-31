@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>POST</http_method>
+        <name>Get question</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+	var topicIndex = request.body.data.topicIndex;
+	var levelIndex = request.body.data.levelIndex;
+	var answer = {};
+	var tu = new Utils();
+	
+	var topicObj = (topicIndex == 0) ? tu.getRandomTopic() : tu.getTopicByID(topicIndex);
+	var levelObj = (levelIndex == 0) ? tu.getRandomLevel() : tu.getLevelByID(levelIndex);
+	
+	answer = tu.getRandomQuestion(topicObj, levelObj);
+		
+	response.setBody(answer);
+	
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_flash/fetch</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-04-29 22:51:05</sys_created_on>
+        <sys_id>323fb8fb0fdab2007500cbdce1050edf</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Get question</sys_name>
+        <sys_package display_value="Flash Card" source="x_flash">0f0a2cb3671232001ad95bb557415a5f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Flash Card">0f0a2cb3671232001ad95bb557415a5f</sys_scope>
+        <sys_update_name>sys_ws_operation_323fb8fb0fdab2007500cbdce1050edf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-04-30 00:33:49</sys_updated_on>
+        <web_service_definition display_value="Fetch">d0eeb4fb0fdab2007500cbdce1050e9d</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>
